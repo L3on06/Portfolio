@@ -4,9 +4,14 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 
 .container {
     background-color: #121212;
+    overflow-x: hidden;
+
 }
 
 .mainSection {
@@ -35,7 +40,7 @@
 }
 
 .nameContainer {
-    height: 100vh;
+    height: 101vh;
     background-color: rebeccapurple;
 }
 
@@ -44,14 +49,14 @@
     color: #121212;
     cursor: default;
     line-height: 100vh;
-    text-align: center;
 }
 
 .jobTitleContainer {
-    height: 100vh;
+    height: 101vh;
 }
 
 .dark {
+    text-align: end;
     background-image: url("./img/bg1.png");
 }
 
@@ -74,8 +79,8 @@
     padding: 0 100px;
 }
 
-.projectTitle {
-    font-size: 10vw;
+.projectTitle{
+    font-size: 12vw;
     color: #333;
 }
 
@@ -83,8 +88,8 @@
     display: flex;
     align-items: center;
     gap: 100px;
-    height: 100vh;
-    overflow: hidden;
+    /* height: 100vh; */
+    /* overflow: hidden; */
 }
 .project:nth-child(2n) {
 flex-direction: row-reverse;
@@ -113,7 +118,7 @@ flex-direction: row-reverse;
 
 .phoneApp {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .projectDetail {
@@ -124,7 +129,7 @@ flex-direction: row-reverse;
     gap: 50px;
 }
 
-.projectTitle {
+.projectsTitle {
     font-size: 7vw;
     color: #555;
 }
@@ -141,6 +146,7 @@ flex-direction: row-reverse;
     background-color: transparent;
     border: 2px solid #555;
     color: #555;
+      cursor: pointer;
     position: relative;
     overflow: hidden;
 }
@@ -233,3 +239,15 @@ position: relative;
 .githubChart:hover .active:nth-child(1n){
     background-color: rebeccapurple;
 }
+
+@media (max-width: 1024px){
+    .project,
+    .project:nth-child(2n)
+    {
+        flex-direction: column;
+    }
+     .phone,.laptop{
+    transform: none !important;
+  }
+    
+} 
