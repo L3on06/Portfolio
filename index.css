@@ -8,10 +8,14 @@
   display: none;
 }
 
+a,li{
+list-style: none;
+text-decoration: none;
+}
+
 .container {
     background-color: #121212;
     overflow-x: hidden;
-
 }
 
 .mainSection {
@@ -22,21 +26,20 @@
 }
 
 .mainSectionText {
-    flex: 3;
+width: 70%;
 }
 
-.mainSectionText {
-    flex: 1;
-    cursor: default;
+.mainSectionImg {
+width: 30%;
 }
 
 .mainText {
     color: #333;
-    font-size: 60vw;
+    font-size: 40vw;
 }
 
 .mainImg {
-    width: 90%;
+    width: 80%;
 }
 
 .nameContainer {
@@ -72,11 +75,13 @@
     cursor: default;
 }
 
+
+
 .projects {
     display: flex;
     flex-direction: column;
     gap: 30vw;
-    padding: 0 100px;
+    text-align: center;
 }
 
 .projectTitle{
@@ -88,16 +93,14 @@
     display: flex;
     align-items: center;
     gap: 100px;
-    /* height: 100vh; */
-    /* overflow: hidden; */
+    flex-direction: column;
 }
 .project:nth-child(2n) {
-flex-direction: row-reverse;
+flex-direction: column;
 }
 
 .phone {
     flex: 1;
-    width: 300px;
     height: 600px;
     position: relative;
 }
@@ -118,15 +121,15 @@ flex-direction: row-reverse;
 
 .phoneApp {
     width: 100%;
-    /* height: 100vh; */
 }
 
 .projectDetail {
-    flex: 1;
+width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 10px;
+    /* padding: 0 30px; */
 }
 
 .projectsTitle {
@@ -193,30 +196,12 @@ position: relative;
     width: 100%;
 }
 
-.githubContainer{
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-.githubTitle{
-    font-size: 100px;
-    color: #333;
-}
-.githubChart{
-    width: 820px;
-    text-align: center;
-    
+.phone,
+.laptop
+{
+transform: none !important;
 }
 
-.dates{
-    padding: 10px;
-    color: #333;
-    font-size: 12px;
-     display: flex;
-  justify-content: space-between;
-}
 
 .boxContainer{
     display: flex;
@@ -240,14 +225,68 @@ position: relative;
     background-color: rebeccapurple;
 }
 
-@media (max-width: 1024px){
-    .project,
-    .project:nth-child(2n)
-    {
-        flex-direction: column;
-    }
-     .phone,.laptop{
-    transform: none !important;
-  }
-    
+.githubContainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.githubTitle{
+    text-align: center;
+    font-size: 70px;
+    color: #333;
+}
+.githubChart{
+    display: none;
+}
+
+.githubButton {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #555;
+    color: #555;
+      cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.githubButton::after {
+    content: "View demo";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: rebeccapurple;
+    transition: 1s all;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.githubButton:hover.githubButton::after {
+    transform: translateX(100%);
+}
+
+@media (min-width: 850px){
+
+.githubChart{
+    display: block;
+    width: 820px;
+    text-align: center;
+}
+
+.dates{
+    padding: 10px;
+    color: #333;
+    font-size: 12px;
+     display: flex;
+  justify-content: space-between;
+}
+
+.githubButton{
+    display: none;
+}
 } 
